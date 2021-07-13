@@ -2,10 +2,12 @@
 
 const onMyBirthday = (isKayoSick) => {
     return new Promise((resolve, reject) => {
-        if (isKayoSick) {
-            reject("I'm sick, I can't do this!");
-        } else {
-            resolve("Happy birthday, my friend!");
-        }
-    }
-}
+        setTimeout(() => {
+            if (!isKayoSick) {
+                resolve(1);
+            } else {
+                reject(0);
+            }
+        }, 2000);
+    });
+};
