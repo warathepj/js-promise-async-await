@@ -11,3 +11,7 @@ const onMyBirthday = (isKayoSick) => {
         }, 2000);
     });
 };
+
+onMyBirthday(false).then((result) => {
+    console.log(`I have ${result} cakes`);
+});
