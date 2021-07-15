@@ -12,6 +12,9 @@ const onMyBirthday = (isKayoSick) => {
     });
 };
 
+console.time("Timer");
+
 onMyBirthday(false).then((result) => {
+    console.timeLog("Timer");
     console.log(`I have ${result} cakes`);
 });
