@@ -24,4 +24,7 @@ onMyBirthday(true)
         console.timeLog("Timer");
 
         console.log(error);
+    })
+    .finally(() => {
+        console.log("Party");
     });
