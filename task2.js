@@ -15,11 +15,31 @@ const enterNumber = () => {
         if (isNaN(userNumber)) {
             reject(new Error("Wrong Input Type"));
         }
+
+        if (userNumber === randomNumber) {
+            resolve({
+                points: 2,
+                randomNumber,
+            });
+        } else if (
+            userNumber === randomNumber - 1 ||
+            userNumber === randomNumber + 1
+        ) {
+            resolve({
+                points: 1,
+                randomNumber,
+            });
+        } else {
+            resolve({
+                points: 0,
+                randomNumber,
+            });
+        }
     });
 };
 
 const start = () => {
-    enterNumber
+    enterNumber().catch((error) => alert(error));
 };
 
 start();
