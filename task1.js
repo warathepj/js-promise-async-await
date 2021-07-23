@@ -14,7 +14,7 @@ const onMyBirthday = (isKayoSick) => {
 
 console.time("Timer");
 
-onMyBirthday(true)
+onMyBirthday(false)
     .then((result) => {
     console.timeLog("Timer");
 

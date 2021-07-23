@@ -7,6 +7,19 @@
 // give the user 1 point, otherwise, give the user 0 points.
 // User story: User can decide to play the game as long as they want to
 
-const start = () => {};
+const enterNumber = () => {
+    return new Promise((resolve, reject) => {
+        const userNumber = Number(window.prompt('Enter a number from 1 to 6:'));
+        const randomNumber = Math.floor(Math.random() * 6 + 1);
+
+        if (isNaN(userNumber)) {
+            reject(new Error("Wrong Input Type"));
+        }
+    });
+};
+
+const start = () => {
+    enterNumber
+};
 
 start();
