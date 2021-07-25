@@ -38,8 +38,22 @@ const enterNumber = () => {
     });
 };
 
+const continueGame = () => {
+    return new Promise((resolve) => {
+        if (window.confirm('Do you want to play again?')) {
+            resolve(true);
+        } else {
+            resolve(false);
+        }
+    });
+};
+
 const start = () => {
-    enterNumber().catch((error) => alert(error));
+    enterNumber()
+        .then(result => {
+            alert(`Dice: ${result.randomNumber}: you got ${result.points} points`);
+        })
+            .catch((error) => alert(error));
 };
 
 start();
