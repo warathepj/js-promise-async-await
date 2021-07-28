@@ -48,12 +48,24 @@ const continueGame = () => {
     });
 };
 
-const start = () => {
+const handleGuess = () => {
     enterNumber()
         .then(result => {
             alert(`Dice: ${result.randomNumber}: you got ${result.points} points`);
+
+            continueGame().then((result) => {
+                if (result) {
+                    handleGuess();
+                } else {
+                    alert('Game Over');
+                }
+            });
         })
-            .catch((error) => alert(error));
+        .catch((error) => alert(error));
+};
+
+const start = () => {
+    handleGuess();
 };
 
 start();
